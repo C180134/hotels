@@ -7,11 +7,14 @@ if (isset($_GET["address"])) {
 //database connect
 $pdo = connectDatabase();
 // sql set
-$sql = "select * from hotels where pref = ?";
+$sql = "select * from hotels where pref like ? or city like ? or address like ?";
 //sql run
 $pstmt = $pdo->prepare($sql);
 
-$pstmt->bindValue(1,$address);
+$pstmt->bindValue(1,"%".$address."%");
+$pstmt->bindValue(2,"%".$address."%");
+$pstmt->bindValue(3,"%".$address."%");
+
 
 $pstmt->execute();
 
