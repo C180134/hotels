@@ -10,8 +10,6 @@ class Hotel {
 	private $memo;
 	private $image;
 
-
-
 	function __construct(int $id, string $name,int $price,string $pref,string $city, string $address,string $memo,string $image) {
 		$this->id = $id;
 		$this->name = $name;
@@ -21,8 +19,6 @@ class Hotel {
 		$this->address = $address;
 		$this->memo = $memo;
 		$this->image = $image;
-		
-		
 	}
 
 	function getId():int {
@@ -54,10 +50,8 @@ class Hotel {
 	}
 	
 	function getImage():string {
-		return $this->;
+		return $this->image;
 	}
-	
-	
 }
 
 ?>
